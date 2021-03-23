@@ -6,9 +6,9 @@ library(data.table)
 library(recommenderlab)
 library(reshape2)
 
-books<-fread("books_bagofwords.csv",header=TRUE)
-ratings<-fread("ratings_9900.csv",header=TRUE)
-users<-fread("users_new.csv",header=TRUE)
+books<-fread("data/books_bagofwords.csv",header=TRUE)
+ratings<-fread("data/ratings_9900.csv",header=TRUE)
+users<-fread("data/users_new.csv",header=TRUE)
 
 #Create ratings matrix. Rows = user_id, Columns = book_id
 ratingmat <- dcast(ratings, user_id~book_id, value.var = "rating", na.rm=FALSE)
